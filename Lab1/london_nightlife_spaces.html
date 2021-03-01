@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title>Nightlife in London</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js"></script>
+    <style>
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+    </style>
+</head>
+<body>
+
+    <style>
+
+        .mapboxgl-popup {
+        max-width: 600px;
+        font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+        background-color: rgba(255, 255, 255, 0.753);
+        }
+        #info {
+        display: block;
+        position: absolute;
+        margin-left: 5px;
+        margin-top: 1px;
+        width: 50%;
+        padding: 1px;
+        border: none;
+        border-radius: 1px;
+        font-weight: bold;
+        font: 25px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+        text-align: left;
+        color: rgba(255, 255, 255, 0.95);
+        background: none;
+    }
+        #menu {
+        background: rgba(238, 237, 237, 0.356);
+        position: absolute;
+        z-index: 1;
+        top: 10px;
+        right: 10px;
+        background-color: rgba(216, 216, 216, 0.6);
+        border-radius: 6px;
+
+        width: 150px;
+    
+        font-family: 'Open Sans', sans-serif;
+   
+    
+    }
+     
+        #menu a {
+        font-size: 12px;
+        color: rgba(0, 0, 0);
+        display: block;
+        margin: 0;
+        padding: 0;
+        padding: 10px;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+        text-align: center;
+    
+    }
+     
+        #menu a:last-child {
+        border: none;
+    }
+     
+        #menu a:hover {
+        color:rgb(190, 184, 184);
+    
+    }
+     
+        #menu a.active {
+        background-color: rgba(216, 216, 216, 0.6);
+        color: 'black';
+        border-radius: 6px;
+    }
+     
+        #menu a.active:hover {
+        background: #15171896;
+    }
+
+        .legend {
+        background-color: rgba(216, 216, 216, 0.6);
+        border-radius: 3px;
+        bottom: 30px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+        padding: 10px;
+        position: absolute;
+        left: 10px;
+        z-index: 1;
+}
+
+        .legend h4 {
+        margin: 0 0 10px;
+}
+ 
+        .legend div span {
+        border-radius: 50%;
+        display: inline-block;
+        height: 10px;
+        margin-right: 5px;
+        width: 10px;
+}
+    </style>
+  <!-- Create a legend for the web map -->
+    <div id="legend" class="legend">
+    <h4>Nightlife Spaces</h4>
+    <div><span style="background-color: #7bccc4"></span>Music Venues</div>
+    <div><span style="background-color: #bae4bc"></span>Theatres</div>
+    <div><span style="background-color: #2b8cbe"></span>Pubs</div>
+    <div><span style="background-color: #f0f9e8"></span>Dance Performance Venues</div>
+    </div>
+     
+    <nav id="menu"></nav>
+    <div id="map"></div>
+    <pre id="info"></pre>
+
+<!-- Start JavaScript-->
+<script>
+// Grab mapbox access token
+mapboxgl.accessToken = 'pk.eyJ1IjoiYWxpc29uZGVlcmUiLCJhIjoiY2s1ZzRiZ3JsMDQycDNrcW1nMHcxODhkayJ9.HO_b7LH4WrchBsGVMuroIg';
+
+// Set bounds of the map around the greater London area
+var bounds = [
+        [-1.0, 51],
+        [1.0, 52]
+    ];
+
+    // define map! style is a dark monochrome style. 
+var map = new mapboxgl.Map({
+    container: 'map', // container id
+    style: 'mapbox://styles/alisondeere/cklpmkfcl40jl17pfj5qluyjg', //stylesheet location
+    center: [-0.1278, 51.50], // starting position
+    zoom: 9.9,
+    maxBounds: bounds, // starting zoom
+});
+// Set title of map
+document.getElementById('info').innerHTML = "<h3>Nightlife Spaces in London, England</h3>"
+
+/////////////////////// MUSIC VENUES /////////////////////////////
+
+// Grab music venue geojson file from github pages
+
+// Use jQuery AJAX to request GeoJSON features from
+// an editor project (https://www.mapbox.com/api-documentation/#retrieve-features-from-mapbox-editor-projects)
+// When the data has been received, add it to the map! 
+var editorData = $.ajax({
+    url: "https://adeere.github.io/adeere-web/data/music_venues.geojson" // Music Venues
+    }).done(function(data){
+        map.on('load', function(){
+            // Add a new source from our GeoJSON data 
+            map.addSource("Music Venues", {
+                type: "geojson",
+                data: data,
+                cluster: true,
+               clusterMaxZoom: 14, // Max zoom to cluster points on
+                clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
+            });
+
+map.addLayer({
+    id: 'clusters_music', // Large clusters of music venues
+    type: 'circle',
+    source: 'Music Venues',
+    filter: ['has', 'point_count'],
+    paint: {
+    // Use step expressions (https://docs.mapbox.com/mapbox-gl-js/style-spec/#expressions-step)
+    // with three steps to implement three types of circles:
+    //   * 15px circles when point count is less than 10
+    //   * 20px circles when point count is between 20 and 50
+    //   * 30px circles when point count is greater than or equal to 50
+
+        'circle-opacity': 0.87,
+        'circle-color': [
+        'step',
+        ['get', 'point_count'],
+        '#7bccc4',
+        100,
+        '#7bccc4',
+        750,
+        '#7bccc4'
+        ],
+        'circle-radius': [
+        'step',
+        ['get', 'point_count'],
+        15,
+        10,
+        20,
+        20,
+        25,
+        50,
+        30
+        ]
+        }
+});
+ 
+map.addLayer({
+    id: 'cluster-count_music', // The number of clusters that appears on each cluster 
+    type: 'symbol',
+    source: 'Music Venues',
+    filter: ['has', 'point_count'],
+    layout: {
+    'text-field': '{point_count_abbreviated}',
+    'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
+    'text-size': 10,
+    }
+});
+ 
+map.addLayer({ // The zoomed in music venues, no longer clusters. 
+    id: 'Music Venues', 
+    type: 'circle',
+    source: 'Music Venues',
+    filter: ['!', ['has', 'point_count']],
+    paint: {
+        'circle-color': '#7bccc4',
+        'circle-radius': 6,
+        'circle-stroke-width': 1,
+        'circle-stroke-color': '#7bccc4'
+    }
+    });
+    });
+});
+/////////////////////// MUSIC VENUES /////////////////////////////
+
+
+
+/////////////////////// THEATRES /////////////////////////////
+
+// Use jQuery AJAX to request GeoJSON features from
+// an editor project (https://www.mapbox.com/api-documentation/#retrieve-features-from-mapbox-editor-projects)
+// When the data has been received, add it to the map! 
+var editorData = $.ajax({
+    url: "https://adeere.github.io/adeere-web/data/theatres.geojson"
+    }).done(function(data){
+        map.on('load', function(){
+            // Add a new source from our GeoJSON data 
+            map.addSource("Theatres", {
+                type: "geojson",
+                data: data,
+                cluster: true,
+                clusterMaxZoom: 14, // Max zoom to cluster points on
+                clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
+            });
+
+map.addLayer({ // Clusters of theatres
+    id: 'clusters_theatres',
+    type: 'circle',
+    source: 'Theatres',
+    filter: ['has', 'point_count'],
+    paint: {
+    // Use step expressions (https://docs.mapbox.com/mapbox-gl-js/style-spec/#expressions-step)
+    // with three steps to implement three types of circles:
+    //   * 15px circles when point count is less than 10
+    //   * 20px circles when point count is between 20 and 50
+    //   * 30px circles when point count is greater than or equal to 50
+        'circle-opacity': 0.87,
+        'circle-color': [
+        'step',
+        ['get', 'point_count'],
+        '#bae4bc',
+        100,
+        '#bae4bc',
+        750,
+        '#bae4bc'
+        ],
+        'circle-radius': [
+        'step',
+        ['get', 'point_count'],
+        15,
+        10,
+        20,
+        20,
+        25,
+        50,
+        30
+        ]
+        }
+});
+ 
+map.addLayer({
+    id: 'cluster-count_theatres', // Numbers of clusters that appears on the clusters
+    type: 'symbol',
+    source: 'Theatres',
+    filter: ['has', 'point_count'],
+    layout: {
+        'text-field': '{point_count_abbreviated}',
+        'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
+        'text-size': 10,
+        }
+});
+ 
+map.addLayer({ // Theatre layer visible when you fully zoom in 
+        id: 'Theatres',
+        type: 'circle',
+        source: 'Theatres',
+        filter: ['!', ['has', 'point_count']],
+        paint: {
+        'circle-color': '#bae4bc',
+        'circle-radius': 6,
+        'circle-stroke-width': 1,
+        'circle-stroke-color': '#bae4bc'
+        }
+        });
+        });
+});
+/////////////////////// THEATRES /////////////////////////////
+
+
+
+
+
+/////////////////////// PUBS /////////////////////////////
+
+// Use jQuery AJAX to request GeoJSON features from
+// an editor project (https://www.mapbox.com/api-documentation/#retrieve-features-from-mapbox-editor-projects)
+// When the data has been received, add it to the map! 
+var editorData = $.ajax({
+    url: "https://adeere.github.io/adeere-web/data/pubs.geojson"
+    }).done(function(data){
+        map.on('load', function(){
+            // Add a new source from our GeoJSON data 
+            map.addSource("Pubs", {
+                type: "geojson",
+                data: data,
+                cluster: true,
+               clusterMaxZoom: 14, // Max zoom to cluster points on
+                clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
+            });
+
+map.addLayer({ // Layer of clusters
+    id: 'clusters_pubs',
+    type: 'circle',
+    source: 'Pubs',
+    filter: ['has', 'point_count'],
+    paint: {
+    // Use step expressions (https://docs.mapbox.com/mapbox-gl-js/style-spec/#expressions-step)
+    // with three steps to implement three types of circles:
+    //   * 15px circles when point count is less than 10
+    //   * 20px circles when point count is between 20 and 50
+    //   * 30px circles when point count is greater than or equal to 50
+        'circle-opacity': 0.87,
+        'circle-color': [
+        'step',
+        ['get', 'point_count'],
+        '#2b8cbe',
+        100,
+        '#2b8cbe',
+        750,
+        '#2b8cbe'
+        ],
+        'circle-radius': [
+        'step',
+        ['get', 'point_count'],
+        15,
+        10,
+        20,
+        20,
+        25,
+        50,
+        30
+        ]
+        }
+});
+
+map.addLayer({
+    id: 'cluster-count_pubs', // Numbers that appear on top of clusters
+    type: 'symbol',
+    source: 'Pubs',
+    filter: ['has', 'point_count'],
+    layout: {
+        'text-field': '{point_count_abbreviated}',
+        'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
+        'text-size': 10,
+        }
+});
+
+map.addLayer({ // Fully zoomed in layers of pubs
+    id: 'Pubs',
+    type: 'circle',
+    source: 'Pubs',
+    filter: ['!', ['has', 'point_count']],
+    paint: {
+        'circle-color': '#2b8cbe',
+        'circle-radius': 6,
+        'circle-stroke-width': 1,
+        'circle-stroke-color': '#2b8cbe'
+        }
+});
+});
+});
+
+/////////////////////// PUBS /////////////////////////////
+
+
+
+
+/////////////////////// DANCE /////////////////////////////
+// Use jQuery AJAX to request GeoJSON features from
+// an editor project (https://www.mapbox.com/api-documentation/#retrieve-features-from-mapbox-editor-projects)
+// When the data has been received, add it to the map! 
+var editorData = $.ajax({
+    url: "https://adeere.github.io/adeere-web/data/dance_performance_venues.geojson"
+    }).done(function(data){
+        map.on('load', function(){
+            // Add a new source from our GeoJSON data 
+            map.addSource("Dance Performance Venues", {
+                type: "geojson",
+                data: data,
+                cluster: true,
+               clusterMaxZoom: 14, // Max zoom to cluster points on
+                clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
+            });
+
+map.addLayer({ // clusters of dance performance venues
+    id: 'clusters_dance',
+    type: 'circle',
+    source: 'Dance Performance Venues',
+    filter: ['has', 'point_count'],
+    paint: {
+    // Use step expressions (https://docs.mapbox.com/mapbox-gl-js/style-spec/#expressions-step)
+    // with three steps to implement three types of circles:
+    //   * Blue, 20px circles when point count is less than 100
+    //   * Yellow, 30px circles when point count is between 100 and 750
+    //   * Pink, 40px circles when point count is greater than or equal to 750
+        'circle-opacity': 0.87,
+        'circle-color': [
+        'step',
+        ['get', 'point_count'],
+        '#f0f9e8',
+        100,
+        '#f0f9e8',
+        750,
+        '#f0f9e8'
+        ],
+        'circle-radius': [
+        'step',
+        ['get', 'point_count'],
+        15,
+        10,
+        20,
+        20,
+        25,
+        50,
+        30
+        ]
+        }
+});
+ 
+map.addLayer({ // Numbers that go on top of clusters
+    id: 'cluster-count_dance',
+    type: 'symbol',
+    source: 'Dance Performance Venues',
+    filter: ['has', 'point_count'],
+    layout: {
+        'text-field': '{point_count_abbreviated}',
+        'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
+        'text-size': 10,
+    }
+});
+
+map.addLayer({ // most zoomed in layer of dance performacne venues
+    id: 'Dance Performance Venues',
+    type: 'circle',
+    source: 'Dance Performance Venues',
+    filter: ['!', ['has', 'point_count']],
+    paint: {
+        'circle-color': '#f0f9e8',
+        'circle-radius': 6,
+        'circle-stroke-width': 1,
+        'circle-stroke-color': '#f0f9e8'
+    }
+});
+});
+});
+/////////////////////// PUBS /////////////////////////////
+
+
+
+
+
+//////////////// ADDING INTERACTIVITY: POPUPS ///////////////
+
+/// MUSIC ///
+map.on('click', function(e) {
+    var features = map.queryRenderedFeatures(e.point, {
+        layers: ['Music Venues'] // replace this with the name of the layer
+    });
+
+if (!features.length) {
+    return;
+}
+
+var feature = features[0];
+
+var popup = new mapboxgl.Popup({ offset: [0, -15] })
+    .setLngLat(feature.geometry.coordinates)
+    .setHTML('<h3>' + feature.properties.name + '<hr>' + '</h3><p> <strong>Address: </strong>' + feature.properties.address1 + '</p><p><strong>Website: </strong>' + feature.properties.website + '</p')
+    .addTo(map);
+});
+
+/// THEATRES ///
+map.on('click', function(e) {
+    var features = map.queryRenderedFeatures(e.point, {
+        layers: ['Theatres'] // replace this with the name of the layer
+    });
+
+if (!features.length) {
+    return;
+}
+
+var feature = features[0];
+
+var popup = new mapboxgl.Popup({ offset: [0, -15] })
+    .setLngLat(feature.geometry.coordinates)
+    .setHTML('<h3>' + feature.properties.name + '<hr>' + '</h3><p> <strong>Address: </strong>' + feature.properties.address1 + '</p><p><strong>Website: </strong>' + feature.properties.website + '</p')
+    .addTo(map);
+});
+
+/// PUBS /// 
+map.on('click', function(e) {
+    var features = map.queryRenderedFeatures(e.point, {
+    layers: ['Pubs'] // replace this with the name of the layer
+});
+
+if (!features.length) {
+    return;
+}
+
+var feature = features[0];
+
+var popup = new mapboxgl.Popup({ offset: [0, -15] })
+    .setLngLat(feature.geometry.coordinates)
+    .setHTML('<h3>' + feature.properties.name + '<hr>' + '</h3><p> <strong>Address: </strong>' + feature.properties.address1 + '</p>')
+    .addTo(map);
+});
+
+/// DANCE ///
+map.on('click', function(e) {
+    var features = map.queryRenderedFeatures(e.point, {
+        layers: ['Dance Performance Venues'] // replace this with the name of the layer
+    });
+
+if (!features.length) {
+    return;
+}
+
+var feature = features[0];
+
+var popup = new mapboxgl.Popup({ offset: [0, -15] })
+    .setLngLat(feature.geometry.coordinates)
+    .setHTML('<h3>' + feature.properties.name + '<hr>' + '</h3><p> <strong>Address: </strong>' + feature.properties.address1 + '</p><p><strong>Website: </strong>' + feature.properties.website + '</p')
+    .addTo(map);
+});
+
+
+/////// ADDING INTERACTIVITY: ZOOM WHEN CLICK ON CLUSTER /////////
+
+/// MUSIC ///
+map.on('click', 'clusters_music', function (e) {
+    var features = map.queryRenderedFeatures(e.point, {
+        layers: ['clusters_music']
+    });
+    var clusterId = features[0].properties.cluster_id;
+    map.getSource('Music Venues').getClusterExpansionZoom(
+        clusterId,
+        function (err, zoom) {
+            if (err) return;
+            map.easeTo({
+                center: features[0].geometry.coordinates,
+                zoom: zoom
+            });
+        }
+        );
+    });
+
+/// THEATRES ///
+map.on('click', 'clusters_theatres', function (e) {
+    var features = map.queryRenderedFeatures(e.point, {
+        layers: ['clusters_theatres']
+});
+var clusterId = features[0].properties.cluster_id;
+map.getSource('Theatres').getClusterExpansionZoom(
+    clusterId,
+    function (err, zoom) {
+        if (err) return;
+        map.easeTo({
+            center: features[0].geometry.coordinates,
+            zoom: zoom
+        });
+    }
+    );
+});
+
+/// PUBS ///
+map.on('click', 'clusters_pubs', function (e) {
+    var features = map.queryRenderedFeatures(e.point, {
+        layers: ['clusters_pubs']
+    });
+    var clusterId = features[0].properties.cluster_id;
+    map.getSource('Pubs').getClusterExpansionZoom(
+        clusterId,
+        function (err, zoom) {
+            if (err) return;
+            map.easeTo({
+                center: features[0].geometry.coordinates,
+                zoom: zoom
+            });
+        }
+        );
+});
+
+/// DANCE ///
+map.on('click', 'clusters_dance', function (e) {
+    var features = map.queryRenderedFeatures(e.point, {
+        layers: ['clusters_dance']
+    });
+    var clusterId = features[0].properties.cluster_id;
+    map.getSource('Dance Performance Venues').getClusterExpansionZoom(
+        clusterId,
+        function (err, zoom) {
+            if (err) return;
+            map.easeTo({
+                center: features[0].geometry.coordinates,
+                zoom: zoom
+            });
+        }
+        );
+    });
+
+/////// ADDING INTERACTIVITY: TOGGLING LAYERS ////////
+// Have to do this an interesting way because of the multiple layers for each feature on the map
+// First set toggleableLayerIds, and then go through with toggle steps. 
+
+/// MUSIC /// 
+var toggleableLayerIds_music = [ 'clusters_music', 'Music Venues' ,'cluster-count_music'];
+
+var link = document.createElement('a');
+link.href = '#';
+link.className = 'active';
+link.textContent = "Toggle Music Venues";
+link.onclick = function (e) {
+    for(var index in toggleableLayerIds_music) {
+        var clickedLayer = toggleableLayerIds_music[index];
+        e.preventDefault();
+        e.stopPropagation();
+        var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
+        if (visibility === 'visible') {
+            map.setLayoutProperty(clickedLayer, 'visibility', 'none');
+            this.className = '';
+        } else {
+            this.className = 'active';
+            map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
+        }
+    }
+    
+};
+var layers = document.getElementById('menu');
+layers.appendChild(link);
+
+/// THEATRES ///
+var toggleableLayerIds_theatre = [ 'clusters_theatres', 'Theatres', 'cluster-count_theatres' ];
+
+var link = document.createElement('a');
+link.href = '#';
+link.className = 'active';
+link.textContent = "Toggle Theatres";
+link.onclick = function (e) {
+    for(var index in toggleableLayerIds_theatre) {
+        var clickedLayer = toggleableLayerIds_theatre[index];
+        e.preventDefault();
+        e.stopPropagation();
+        var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
+        if (visibility === 'visible') {
+            map.setLayoutProperty(clickedLayer, 'visibility', 'none');
+            this.className = '';
+        } else {
+            this.className = 'active';
+            map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
+        }
+    }
+    
+};
+var layers = document.getElementById('menu');
+layers.appendChild(link);
+
+/// PUBS /// 
+var toggleableLayerIds_pubs = [ 'clusters_pubs', 'Pubs' ,'cluster-count_pubs'];
+
+var link = document.createElement('a');
+link.href = '#';
+link.className = 'active';
+link.textContent = "Toggle Pubs";
+link.onclick = function (e) {
+    for(var index in toggleableLayerIds_pubs) {
+        var clickedLayer = toggleableLayerIds_pubs[index];
+        e.preventDefault();
+        e.stopPropagation();
+        var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
+        if (visibility === 'visible') {
+            map.setLayoutProperty(clickedLayer, 'visibility', 'none');
+            this.className = '';
+        } else {
+            this.className = 'active';
+            map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
+        }
+    }
+    
+};
+var layers = document.getElementById('menu');
+layers.appendChild(link);
+
+/// DANCE /// 
+var toggleableLayerIds_dance = [ 'clusters_dance', 'Dance Performance Venues' ,'cluster-count_dance'];
+
+var link = document.createElement('a');
+link.href = '#';
+link.className = 'active';
+link.textContent = "Toggle Dance Performance Venues";
+link.onclick = function (e) {
+    for(var index in toggleableLayerIds_dance) {
+        var clickedLayer = toggleableLayerIds_dance[index];
+        e.preventDefault();
+        e.stopPropagation();
+        var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
+        if (visibility === 'visible') {
+            map.setLayoutProperty(clickedLayer, 'visibility', 'none');
+            this.className = '';
+        } else {
+            this.className = 'active';
+            map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
+        }
+    }
+    
+};
+var layers = document.getElementById('menu');
+layers.appendChild(link);
+
+</script>
+
+</body>
+</html>
