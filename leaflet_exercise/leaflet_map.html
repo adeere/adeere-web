@@ -39,6 +39,8 @@
     // Make a Leaflet map with L.map().
     // Store the map in the variable 'map'.
     // "mapid" is the 'id' of the DOM element to contain the map.
+
+    
     var map = L.map('mapid',
                     { 
       								center: [49.265637, -123.256113],
@@ -57,16 +59,22 @@
     // load GeoJSON from a file on the web
     // $ is jQuery.
     
-    var geojsonMarkerOptions = {
-    radius: 5,
-    fillColor: "red",
-    color: "red",
-    weight: 1,
-    opacity: 1,
-    fillOpacity: 0.4
-};
+var FlagIconOptions = L.Icon.extend({
+    options: {
+       iconSize:     [30,30],
+       shadowSize:   [4, 4],
+       iconAnchor:   [5, 5],
+       shadowAnchor: [1, 1],
+       popupAnchor:  [-1, -1]
+    }
+});
+
+var flagIcon = new FlagIconOptions({
+    iconUrl: 'orion_flag.png',
+})
+
 function onEachPoi(feature, layer) {
-       // does this tree have a property named TAXA?
+       // does this POI have a property named PLACENAME?
        if (feature.properties && feature.properties.PLACENAME) {
           layer.bindTooltip(feature.properties.PLACENAME);
        }
@@ -78,7 +86,7 @@ function onEachPoi(feature, layer) {
       					// Then add it to the map 
                 L.geoJSON(data, {
     pointToLayer: function (feature, latlng) {
-        return L.circleMarker(latlng, geojsonMarkerOptions);
+      return L.marker(latlng, {icon: flagIcon});
     } ,
     onEachFeature: onEachPoi
 }).addTo(map);});
