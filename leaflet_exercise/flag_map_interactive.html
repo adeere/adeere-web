@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Interactive Leaflet Exercise</title>
+  <meta charset="utf-8" />
+
+  <!-- Leaflet styles and code. Place in the <head></head> element. -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+
+  <!-- jQuery is a library that simplifies many things in JavaScript. 
+	     We'll use it to retrieve data from the web. -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+</head>
+<!-- Add Blinking to highlighted icon-->
+<style>
+  @keyframes fade { 
+  from { opacity: 0.5; } 
+}
+  .blinking {
+  animation: fade 1s infinite alternate;
+}
+</style>
+
+<body>
+  <div id="mapid" style="width: 800px; height: 600px;"></div>
+  <!-- Our web map will get placed into this div element -->
+
+  <div id="controls" style="margin: 15px;">
+    <button id="showAllPOIButton">Show All POI Flags</button>
+
+    <span style="display:inline-block; width: 30px"></span>
+    <input type="text" id="highlightPOITextEntry" placeholder="place name">
+    <button id="highlightPOIButton">Highlight</button>
+
+  </div>
+  <script>
+    // Make a Leaflet map with L.map().
+    // Store the map in the variable 'map'.
+    // "mapid" is the 'id' of the DOM element to contain the map.
+    var map = L.map('mapid', {
+        center: [49.262637, -123.236113],
+        zoom: 14
+      } // this object holds map options
+    );
+
+    var topoTiles = L.tileLayer(
+                    'https://tile.openstreetmap.bzh/br/{z}/{x}/{y}.png',
+                      {
+												maxZoom: 17,
+												attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles courtesy of <a href="http://www.openstreetmap.bzh/" target="_blank">Breton OpenStreetMap Team</a>',
+											}
+										).addTo(map);
+
+    // load GeoJSON from a file on the web
+    // $ is jQuery.
+
+    // Normal Flag
+    var FlagIconOptions = L.Icon.extend({
+    options: {
+       iconSize:     [30,30],
+       shadowSize:   [4, 4],
+       iconAnchor:   [5, 5],
+       shadowAnchor: [1, 1],
+       popupAnchor:  [-1, -1]
+    }
+});
+
+// Highlighted Flag
+var HighlightedFlagIconOptions = L.Icon.extend({
+    options: {
+       iconSize:     [70,70],
+       shadowSize:   [4, 4],
+       iconAnchor:   [28, 24],
+       shadowAnchor: [1, 1],
+       popupAnchor:  [24, -1]
+    }
+});
+
+var flagIcon = new FlagIconOptions({
+    iconUrl: 'Orion_flag.png',
+})
+
+// Highlighted flag - with blinking
+var HighlightflagIcon = new HighlightedFlagIconOptions({
+    iconUrl: 'circle_flag.png',
+    className: 'blinking', 
+})
+
+    function onEachPOI(feature, layer) {
+      // does this poi even have a property named placename?
+      if (feature.properties && feature.properties.PLACENAME) {
+        layer.bindTooltip(feature.properties.PLACENAME);
+      }
+    }
+
+    function POIPointToLayer(feature, latlng) {
+      return L.marker(latlng, {icon: flagIcon})
+    }
+
+    function HighlightedPOIPointToLayer(feature, latlng) {
+      return L.marker(latlng, {icon: HighlightflagIcon})
+    }
+
+    function POIToFilter(feature, layer) {
+      if (POIToHighlight === "") {
+        return true;
+        // In this case, we're not highlighting anything, so draw everything.
+      } else if (feature.properties && feature.properties.PLACENAME) {
+        // We just checked to make sure there are properties to avoid an error
+        //   by asking for the .PLACENAME when there are no properties.
+        // Now, we need to check to see if the .PLACENAME *includes* the search string we're
+        //   trying to highlight.
+        return feature.properties.PLACENAME.toLowerCase().includes(POIToHighlight.toLowerCase());
+        // We ignore uppercase/lowercase differences.
+      } else {
+        return false;
+        // This is for features that lack properties.
+        // Don't display them.
+      }
+    }
+
+    var lastLayerAdded = {};
+
+    function addPOI() {
+      if (map.hasLayer(lastLayerAdded)) {
+        map.removeLayer(lastLayerAdded);
+      }
+      lastLayerAdded = L.geoJSON(POIGeoJSONdata, {
+        pointToLayer: POIPointToLayer,
+        onEachFeature: onEachPOI,
+        filter: POIToFilter
+      });
+      lastLayerAdded.addTo(map);
+    };
+
+    function addPOIHighlight() {
+      if (map.hasLayer(lastLayerAdded)) {
+        map.removeLayer(lastLayerAdded);
+      }
+      lastLayerAdded = L.geoJSON(POIGeoJSONdata, {
+        // Highlighted Point
+        pointToLayer: HighlightedPOIPointToLayer,
+        onEachFeature: onEachPOI,
+        filter: POIToFilter
+      });
+      lastLayerAdded.addTo(map);
+    };
+
+    var POIToHighlight = "";
+    // This is set by someone pressing the highlight button.
+    // If it's an empty string, then just draw everything.
+
+    function highlightPOI() {
+      POIToHighlight = document
+        .getElementById("highlightPOITextEntry")
+        .value;
+      addPOIHighlight();
+      POIToHighlight = ""; // reset so that "Show All POI" works.
+    }
+
+    var POIGeoJSONdata;
+
+
+    $.getJSON("https://raw.githubusercontent.com/UBCGeodata/ubc-geospatial-opendata/master/ubcv/locations/geojson/ubcv_poi.geojson",
+      function(data) {
+        // Store data for later:
+        POIGeoJSONdata = data;
+        // Create event listener for ShowAllPOI Button:
+        document
+          .getElementById("showAllPOIButton")
+          .addEventListener("click", addPOI);
+
+        document
+          .getElementById("highlightPOIButton")
+          .addEventListener("click", highlightPOI);
+
+      }
+    );
+  </script>
+
+</body>
+
+</html>
