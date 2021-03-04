@@ -14,13 +14,27 @@
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
 </head>
-<!-- Add Blinking to highlighted icon-->
+<!-- Add Blinking to highlighted icon and make controls at bottom-->
 <style>
   @keyframes fade { 
   from { opacity: 0.5; } 
 }
   .blinking {
   animation: fade 1s infinite alternate;
+}
+
+.leaflet-verticalcenter {
+    position: absolute;
+    z-index: 1000;
+    pointer-events: none;
+    top: 80%; /* possible because the placeholder's parent is the map */
+    transform: translateY(-10%); /* using the CSS3 Transform technique */
+    padding-top: 10px;
+}
+
+.leaflet-verticalcenter .leaflet-control {
+    margin-bottom: 1px;
+    margin-left: 0px;
 }
 </style>
 
@@ -179,6 +193,30 @@ var HighlightflagIcon = new HighlightedFlagIconOptions({
 
       }
     );
+
+
+    // Create additional Control placeholders
+function addControlPlaceholders(map) {
+    var corners = map._controlCorners,
+        l = 'leaflet-',
+        container = map._controlContainer;
+
+    function createCorner(vSide, hSide) {
+        var className = l + vSide + ' ' + l + hSide;
+
+        corners[vSide + hSide] = L.DomUtil.create('div', className, container);
+    }
+
+    createCorner('verticalcenter', 'left');
+    createCorner('verticalcenter', 'right');
+}
+addControlPlaceholders(map);
+
+// Change the position of the Zoom Control to a newly created placeholder.
+map.zoomControl.setPosition('verticalcenterright');
+
+// You can also put other controls in the same placeholder.
+L.control.scale({position: 'verticalcenterright'}).addTo(map);
   </script>
 
 </body>
