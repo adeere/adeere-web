@@ -1,0 +1,1988 @@
+{
+  "type": "FeatureCollection",
+  "name": "rail_stations",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "description": null,
+        "timestamp": null,
+        "begin": null,
+        "end": null,
+        "altitudeMode": null,
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1,
+        "drawOrder": null,
+        "icon": null,
+        "FID": 1,
+        "FCsubtype": 1,
+        "inspireId": "_EG.EGM.RailrdC:0db5a866-931f-4ea4-b7a9-b2cace9bcf",
+        "beginLifespanVersion": "2012/01/01 00:00:00",
+        "F_CODE": "AQ125",
+        "ICC": "HR",
+        "TFC": 0,
+        "NAMN1": "Rijeka",
+        "NAMN2": "N_A",
+        "NAMA1": "Rijeka",
+        "NAMA2": "N_A",
+        "NLN1": "HRV",
+        "NLN2": "N_A",
+        "TUC": 0,
+        "RStationID": "N.HR.RAILRDC.000001"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.4169385,
+          45.3333699990001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "description": null,
+        "timestamp": null,
+        "begin": null,
+        "end": null,
+        "altitudeMode": null,
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1,
+        "drawOrder": null,
+        "icon": null,
+        "FID": 2,
+        "FCsubtype": 1,
+        "inspireId": "_EG.EGM.RailrdC:ea7e3946-a1b4-432b-a92e-2bdec2c41c",
+        "beginLifespanVersion": "2012/01/16 00:00:00",
+        "F_CODE": "AQ125",
+        "ICC": "GR",
+        "TFC": 0,
+        "NAMN1": "ΘΕΣΣΑΛΟΝΙΚΗ",
+        "NAMN2": "N_A",
+        "NAMA1": "UESSALONIKH",
+        "NAMA2": "N_A",
+        "NLN1": "GRE",
+        "NLN2": "N_A",
+        "TUC": 0,
+        "RStationID": "N.GR.RAILRDC.000001"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.9033735,
+          40.659026999
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "description": null,
+        "timestamp": null,
+        "begin": null,
+        "end": null,
+        "altitudeMode": null,
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1,
+        "drawOrder": null,
+        "icon": null,
+        "FID": 8079,
+        "FCsubtype": 1,
+        "inspireId": "_EG.EGM.RailrdC:8daf7dd9-956a-4a7e-97f9-b59dc4e882",
+        "beginLifespanVersion": "2015/10/26 00:00:00",
+        "F_CODE": "AQ125",
+        "ICC": "LV",
+        "TFC": 15,
+        "NAMN1": "Viļāni",
+        "NAMN2": "N_A",
+        "NAMA1": "Vilani",
+        "NAMA2": "N_A",
+        "NLN1": "LAV",
+        "NLN2": "N_A",
+        "TUC": 26,
+        "RStationID": "N.LV.RAILRDC.000081"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.9348665,
+          56.5611919990001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "description": null,
+        "timestamp": null,
+        "begin": null,
+        "end": null,
+        "altitudeMode": null,
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1,
+        "drawOrder": null,
+        "icon": null,
+        "FID": 8080,
+        "FCsubtype": 1,
+        "inspireId": "_EG.EGM.RailrdC:6b0f0006-2f47-47f2-ad60-ef6c219e70",
+        "beginLifespanVersion": "2015/10/26 00:00:00",
+        "F_CODE": "AQ125",
+        "ICC": "LV",
+        "TFC": 31,
+        "NAMN1": "Ludza",
+        "NAMN2": "N_A",
+        "NAMA1": "Ludza",
+        "NAMA2": "N_A",
+        "NLN1": "LAV",
+        "NLN2": "N_A",
+        "TUC": 45,
+        "RStationID": "N.LV.RAILRDC.000087"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.7211205,
+          56.5330314990001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "description": null,
+        "timestamp": null,
+        "begin": null,
+        "end": null,
+        "altitudeMode": null,
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1,
+        "drawOrder": null,
+        "icon": null,
+        "FID": 8081,
+        "FCsubtype": 1,
+        "inspireId": "_EG.EGM.RailrdC:3e4fe7f9-0172-4107-944f-2f062e6af9",
+        "beginLifespanVersion": "2015/10/26 00:00:00",
+        "F_CODE": "AQ125",
+        "ICC": "LV",
+        "TFC": 32,
+        "NAMN1": "Briģi",
+        "NAMN2": "N_A",
+        "NAMA1": "Brigi",
+        "NAMA2": "N_A",
+        "NLN1": "LAV",
+        "NLN2": "N_A",
+        "TUC": 26,
+        "RStationID": "N.LV.RAILRDC.000162"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.0522395,
+          56.4148949990001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "description": null,
+        "timestamp": null,
+        "begin": null,
+        "end": null,
+        "altitudeMode": null,
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1,
+        "drawOrder": null,
+        "icon": null,
+        "FID": 8082,
+        "FCsubtype": 1,
+        "inspireId": "_EG.EGM.RailrdC:14810e14-5d16-4ffe-9acd-42bdacdbd6",
+        "beginLifespanVersion": "2015/10/26 00:00:00",
+        "F_CODE": "AQ125",
+        "ICC": "LV",
+        "TFC": 31,
+        "NAMN1": "Zilupe",
+        "NAMN2": "N_A",
+        "NAMA1": "Zilupe",
+        "NAMA2": "N_A",
+        "NLN1": "LAV",
+        "NLN2": "N_A",
+        "TUC": 45,
+        "RStationID": "N.LV.RAILRDC.000096"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.117096,
+          56.3917914990001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "description": null,
+        "timestamp": null,
+        "begin": null,
+        "end": null,
+        "altitudeMode": null,
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1,
+        "drawOrder": null,
+        "icon": null,
+        "FID": 8083,
+        "FCsubtype": 1,
+        "inspireId": "_EG.EGM.RailrdC:3ff952fb-d850-471e-af81-feeee4bcf9",
+        "beginLifespanVersion": "2015/10/26 00:00:00",
+        "F_CODE": "AQ125",
+        "ICC": "LV",
+        "TFC": 31,
+        "NAMN1": "Pļaviņas",
+        "NAMN2": "N_A",
+        "NAMA1": "Plavinas",
+        "NAMA2": "N_A",
+        "NLN1": "LAV",
+        "NLN2": "N_A",
+        "TUC": 45,
+        "RStationID": "N.LV.RAILRDC.000003"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.716734,
+          56.6171874990001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "description": null,
+        "timestamp": null,
+        "begin": null,
+        "end": null,
+        "altitudeMode": null,
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1,
+        "drawOrder": null,
+        "icon": null,
+        "FID": 8084,
+        "FCsubtype": 1,
+        "inspireId": "_EG.EGM.RailrdC:38ca094d-f586-44a8-8517-659b3ff220",
+        "beginLifespanVersion": "2015/10/26 00:00:00",
+        "F_CODE": "AQ125",
+        "ICC": "LV",
+        "TFC": 15,
+        "NAMN1": "Skrīveri",
+        "NAMN2": "N_A",
+        "NAMA1": "Skriveri",
+        "NAMA2": "N_A",
+        "NLN1": "LAV",
+        "NLN2": "N_A",
+        "TUC": 26,
+        "RStationID": "N.LV.RAILRDC.000079"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.1245685,
+          56.6466784990001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "description": null,
+        "timestamp": null,
+        "begin": null,
+        "end": null,
+        "altitudeMode": null,
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1,
+        "drawOrder": null,
+        "icon": null,
+        "FID": 8085,
+        "FCsubtype": 1,
+        "inspireId": "_EG.EGM.RailrdC:fc0f252e-fa26-44b0-ad47-ed14330cef",
+        "beginLifespanVersion": "2015/10/26 00:00:00",
+        "F_CODE": "AQ125",
+        "ICC": "LV",
+        "TFC": 32,
+        "NAMN1": "Dendrārijs",
+        "NAMN2": "N_A",
+        "NAMA1": "Dendrarijs",
+        "NAMA2": "N_A",
+        "NLN1": "LAV",
+        "NLN2": "N_A",
+        "TUC": 26,
+        "RStationID": "N.LV.RAILRDC.000156"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.0371615,
+          56.6601909990001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "description": null,
+        "timestamp": null,
+        "begin": null,
+        "end": null,
+        "altitudeMode": null,
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1,
+        "drawOrder": null,
+        "icon": null,
+        "FID": 8086,
+        "FCsubtype": 1,
+        "inspireId": "_EG.EGM.RailrdC:18fd091b-87f2-4bf0-ae37-482c71567f",
+        "beginLifespanVersion": "2015/10/26 00:00:00",
+        "F_CODE": "AQ125",
+        "ICC": "LV",
+        "TFC": 32,
+        "NAMN1": "Zvejniekciems",
+        "NAMN2": "N_A",
+        "NAMA1": "Zvejniekciems",
+        "NAMA2": "N_A",
+        "NLN1": "LAV",
+        "NLN2": "N_A",
+        "TUC": 26,
+        "RStationID": "N.LV.RAILRDC.000139"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.4423545,
+          57.3064049990001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "description": null,
+        "timestamp": null,
+        "begin": null,
+        "end": null,
+        "altitudeMode": null,
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1,
+        "drawOrder": null,
+        "icon": null,
+        "FID": 8087,
+        "FCsubtype": 1,
+        "inspireId": "_EG.EGM.RailrdC:9cacd9d6-d4c8-465a-8acd-07dc23cd92",
+        "beginLifespanVersion": "2015/10/26 00:00:00",
+        "F_CODE": "AQ125",
+        "ICC": "LV",
+        "TFC": 15,
+        "NAMN1": "Āraiši",
+        "NAMN2": "N_A",
+        "NAMA1": "Araisi",
+        "NAMA2": "N_A",
+        "NLN1": "LAV",
+        "NLN2": "N_A",
+        "TUC": 26,
+        "RStationID": "N.LV.RAILRDC.000033"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.3005595,
+          57.237313999
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "description": null,
+        "timestamp": null,
+        "begin": null,
+        "end": null,
+        "altitudeMode": null,
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1,
+        "drawOrder": null,
+        "icon": null,
+        "FID": 8088,
+        "FCsubtype": 1,
+        "inspireId": "_EG.EGM.RailrdC:a076c1ae-891c-4619-9ae3-686b5c35bd",
+        "beginLifespanVersion": "2015/10/26 00:00:00",
+        "F_CODE": "AQ125",
+        "ICC": "GB",
+        "TFC": 31,
+        "NAMN1": "Alton Station",
+        "NAMN2": "N_A",
+        "NAMA1": "Alton Station",
+        "NAMA2": "N_A",
+        "NLN1": "ENG",
+        "NLN2": "N_A",
+        "TUC": 45,
+        "RStationID": "N.GB.RAILRDC.000191"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.964785499999948,
+          51.152365499
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "description": null,
+        "timestamp": null,
+        "begin": null,
+        "end": null,
+        "altitudeMode": null,
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1,
+        "drawOrder": null,
+        "icon": null,
+        "FID": 8089,
+        "FCsubtype": 1,
+        "inspireId": "_EG.EGM.RailrdC:d1d6302e-f29d-4e48-828e-7111e5a186",
+        "beginLifespanVersion": "2015/10/26 00:00:00",
+        "F_CODE": "AQ125",
+        "ICC": "LV",
+        "TFC": 15,
+        "NAMN1": "Ieriķi",
+        "NAMN2": "N_A",
+        "NAMA1": "Ieriki",
+        "NAMA2": "N_A",
+        "NLN1": "LAV",
+        "NLN2": "N_A",
+        "TUC": 26,
+        "RStationID": "N.LV.RAILRDC.000034"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.173564,
+          57.1999459990001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "description": null,
+        "timestamp": null,
+        "begin": null,
+        "end": null,
+        "altitudeMode": null,
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1,
+        "drawOrder": null,
+        "icon": null,
+        "FID": 8090,
+        "FCsubtype": 1,
+        "inspireId": "_EG.EGM.RailrdC:392f2ba9-21e1-48b4-bd42-b40c966bbb",
+        "beginLifespanVersion": "2015/10/26 00:00:00",
+        "F_CODE": "AQ125",
+        "ICC": "LV",
+        "TFC": 32,
+        "NAMN1": "Melturi",
+        "NAMN2": "N_A",
+        "NAMA1": "Melturi",
+        "NAMA2": "N_A",
+        "NLN1": "LAV",
+        "NLN2": "N_A",
+        "TUC": 26,
+        "RStationID": "N.LV.RAILRDC.000144"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.233809,
+          57.2075124990001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "description": null,
+        "timestamp": null,
+        "begin": null,
+        "end": null,
+        "altitudeMode": null,
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1,
+        "drawOrder": null,
+        "icon": null,
+        "FID": 8091,
+        "FCsubtype": 1,
+        "inspireId": "_EG.EGM.RailrdC:319a876a-9895-40a6-abbc-e9ebbbf49a",
+        "beginLifespanVersion": "2015/10/26 00:00:00",
+        "F_CODE": "AQ125",
+        "ICC": "LV",
+        "TFC": 31,
+        "NAMN1": "Līgatne",
+        "NAMN2": "N_A",
+        "NAMA1": "Ligatne",
+        "NAMA2": "N_A",
+        "NLN1": "LAV",
+        "NLN2": "N_A",
+        "TUC": 45,
+        "RStationID": "N.LV.RAILRDC.000025"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.023357,
+          57.1841919990001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "description": null,
+        "timestamp": null,
+        "begin": null,
+        "end": null,
+        "altitudeMode": null,
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1,
+        "drawOrder": null,
+        "icon": null,
+        "FID": 8092,
+        "FCsubtype": 1,
+        "inspireId": "_EG.EGM.RailrdC:33726083-7a16-4255-badb-2c5abe5b3f",
+        "beginLifespanVersion": "2015/10/26 00:00:00",
+        "F_CODE": "AQ125",
+        "ICC": "LV",
+        "TFC": 31,
+        "NAMN1": "Zemitāni",
+        "NAMN2": "N_A",
+        "NAMA1": "Zemitani",
+        "NAMA2": "N_A",
+        "NLN1": "LAV",
+        "NLN2": "N_A",
+        "TUC": 45,
+        "RStationID": "N.LV.RAILRDC.000041"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.157303,
+          56.966308999
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "description": null,
+        "timestamp": null,
+        "begin": null,
+        "end": null,
+        "altitudeMode": null,
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1,
+        "drawOrder": null,
+        "icon": null,
+        "FID": 8093,
+        "FCsubtype": 1,
+        "inspireId": "_EG.EGM.RailrdC:52b9eb2f-9348-4c5e-bb8d-834d22dade",
+        "beginLifespanVersion": "2015/10/26 00:00:00",
+        "F_CODE": "AQ125",
+        "ICC": "LV",
+        "TFC": 32,
+        "NAMN1": "Zolitūde",
+        "NAMN2": "N_A",
+        "NAMA1": "Zolitude",
+        "NAMA2": "N_A",
+        "NLN1": "LAV",
+        "NLN2": "N_A",
+        "TUC": 26,
+        "RStationID": "N.LV.RAILRDC.000125"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.022598,
+          56.948948499
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "description": null,
+        "timestamp": null,
+        "begin": null,
+        "end": null,
+        "altitudeMode": null,
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1,
+        "drawOrder": null,
+        "icon": null,
+        "FID": 8094,
+        "FCsubtype": 1,
+        "inspireId": "_EG.EGM.RailrdC:eff05530-0244-42da-93c7-4175380cbc",
+        "beginLifespanVersion": "2015/10/26 00:00:00",
+        "F_CODE": "AQ125",
+        "ICC": "LV",
+        "TFC": 32,
+        "NAMN1": "Jumprava",
+        "NAMN2": "N_A",
+        "NAMA1": "Jumprava",
+        "NAMA2": "N_A",
+        "NLN1": "LAV",
+        "NLN2": "N_A",
+        "TUC": 26,
+        "RStationID": "N.LV.RAILRDC.000077"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.968991,
+          56.6793774990001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "description": null,
+        "timestamp": null,
+        "begin": null,
+        "end": null,
+        "altitudeMode": null,
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1,
+        "drawOrder": null,
+        "icon": null,
+        "FID": 8095,
+        "FCsubtype": 1,
+        "inspireId": "_EG.EGM.RailrdC:a3630f33-0b92-4123-a444-040926e764",
+        "beginLifespanVersion": "2015/10/26 00:00:00",
+        "F_CODE": "AQ125",
+        "ICC": "LV",
+        "TFC": 31,
+        "NAMN1": "Lielvārde",
+        "NAMN2": "N_A",
+        "NAMA1": "Lielvarde",
+        "NAMA2": "N_A",
+        "NLN1": "LAV",
+        "NLN2": "N_A",
+        "TUC": 45,
+        "RStationID": "N.LV.RAILRDC.000074"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.808363,
+          56.7220869990001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "description": null,
+        "timestamp": null,
+        "begin": null,
+        "end": null,
+        "altitudeMode": null,
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1,
+        "drawOrder": null,
+        "icon": null,
+        "FID": 8096,
+        "FCsubtype": 1,
+        "inspireId": "_EG.EGM.RailrdC:317efbca-5e42-4203-885f-e50f9cafee",
+        "beginLifespanVersion": "2015/10/26 00:00:00",
+        "F_CODE": "AQ125",
+        "ICC": "LV",
+        "TFC": 32,
+        "NAMN1": "Ķegums",
+        "NAMN2": "N_A",
+        "NAMA1": "Kegums",
+        "NAMA2": "N_A",
+        "NLN1": "LAV",
+        "NLN2": "N_A",
+        "TUC": 26,
+        "RStationID": "N.LV.RAILRDC.000072"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.7275445,
+          56.7423884990001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "description": null,
+        "timestamp": null,
+        "begin": null,
+        "end": null,
+        "altitudeMode": null,
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1,
+        "drawOrder": null,
+        "icon": null,
+        "FID": 8097,
+        "FCsubtype": 1,
+        "inspireId": "_EG.EGM.RailrdC:71334aa2-ba9f-477b-b5aa-2c490b0c1d",
+        "beginLifespanVersion": "2015/10/26 00:00:00",
+        "F_CODE": "AQ125",
+        "ICC": "LV",
+        "TFC": 32,
+        "NAMN1": "Pārogre",
+        "NAMN2": "N_A",
+        "NAMA1": "Parogre",
+        "NAMA2": "N_A",
+        "NLN1": "LAV",
+        "NLN2": "N_A",
+        "TUC": 26,
+        "RStationID": "N.LV.RAILRDC.000154"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.616513,
+          56.808394499
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "description": null,
+        "timestamp": null,
+        "begin": null,
+        "end": null,
+        "altitudeMode": null,
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1,
+        "drawOrder": null,
+        "icon": null,
+        "FID": 8098,
+        "FCsubtype": 1,
+        "inspireId": "_EG.EGM.RailrdC:a9560c3c-be48-4de1-9112-6c2249e6d9",
+        "beginLifespanVersion": "2015/10/26 00:00:00",
+        "F_CODE": "AQ125",
+        "ICC": "LV",
+        "TFC": 31,
+        "NAMN1": "Ogre",
+        "NAMN2": "N_A",
+        "NAMA1": "Ogre",
+        "NAMA2": "N_A",
+        "NLN1": "LAV",
+        "NLN2": "N_A",
+        "TUC": 45,
+        "RStationID": "N.LV.RAILRDC.000067"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.602834,
+          56.815458999
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "description": null,
+        "timestamp": null,
+        "begin": null,
+        "end": null,
+        "altitudeMode": null,
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1,
+        "drawOrder": null,
+        "icon": null,
+        "FID": 8099,
+        "FCsubtype": 1,
+        "inspireId": "_EG.EGM.RailrdC:ca6247a8-e778-4221-99d0-2ae6e6f12a",
+        "beginLifespanVersion": "2015/10/26 00:00:00",
+        "F_CODE": "AQ125",
+        "ICC": "GB",
+        "TFC": 31,
+        "NAMN1": "Winchester Station",
+        "NAMN2": "N_A",
+        "NAMA1": "Winchester Station",
+        "NAMA2": "N_A",
+        "NLN1": "ENG",
+        "NLN2": "N_A",
+        "TUC": 45,
+        "RStationID": "N.GB.RAILRDC.000192"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.3209165,
+          51.0672999990001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "description": null,
+        "timestamp": null,
+        "begin": null,
+        "end": null,
+        "altitudeMode": null,
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1,
+        "drawOrder": null,
+        "icon": null,
+        "FID": 8100,
+        "FCsubtype": 1,
+        "inspireId": "_EG.EGM.RailrdC:a0937806-28af-4bf7-a2d8-420628ebfc",
+        "beginLifespanVersion": "2015/10/26 00:00:00",
+        "F_CODE": "AQ125",
+        "ICC": "LV",
+        "TFC": 32,
+        "NAMN1": "Ikšķile",
+        "NAMN2": "N_A",
+        "NAMA1": "Ikskile",
+        "NAMA2": "N_A",
+        "NLN1": "LAV",
+        "NLN2": "N_A",
+        "TUC": 26,
+        "RStationID": "N.LV.RAILRDC.000066"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.5055535,
+          56.839930499
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "description": null,
+        "timestamp": null,
+        "begin": null,
+        "end": null,
+        "altitudeMode": null,
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1,
+        "drawOrder": null,
+        "icon": null,
+        "FID": 8101,
+        "FCsubtype": 1,
+        "inspireId": "_EG.EGM.RailrdC:a6d041c9-c0ac-45c4-a534-bce0cf9c85",
+        "beginLifespanVersion": "2015/10/26 00:00:00",
+        "F_CODE": "AQ125",
+        "ICC": "LV",
+        "TFC": 32,
+        "NAMN1": "Saulkalne",
+        "NAMN2": "N_A",
+        "NAMA1": "Saulkalne",
+        "NAMA2": "N_A",
+        "NLN1": "LAV",
+        "NLN2": "N_A",
+        "TUC": 26,
+        "RStationID": "N.LV.RAILRDC.000063"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.4374125,
+          56.8500269990001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "description": null,
+        "timestamp": null,
+        "begin": null,
+        "end": null,
+        "altitudeMode": null,
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1,
+        "drawOrder": null,
+        "icon": null,
+        "FID": 8102,
+        "FCsubtype": 1,
+        "inspireId": "_EG.EGM.RailrdC:bc0a45ef-6e9b-4235-8a24-0d22dab742",
+        "beginLifespanVersion": "2015/10/26 00:00:00",
+        "F_CODE": "AQ125",
+        "ICC": "LV",
+        "TFC": 31,
+        "NAMN1": "Salaspils",
+        "NAMN2": "N_A",
+        "NAMA1": "Salaspils",
+        "NAMA2": "N_A",
+        "NLN1": "LAV",
+        "NLN2": "N_A",
+        "TUC": 45,
+        "RStationID": "N.LV.RAILRDC.000062"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.3518975,
+          56.860510999
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "description": null,
+        "timestamp": null,
+        "begin": null,
+        "end": null,
+        "altitudeMode": null,
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1,
+        "drawOrder": null,
+        "icon": null,
+        "FID": 8103,
+        "FCsubtype": 1,
+        "inspireId": "_EG.EGM.RailrdC:d1ba41a5-8f96-4121-9a43-1d7bfa69e2",
+        "beginLifespanVersion": "2015/10/26 00:00:00",
+        "F_CODE": "AQ125",
+        "ICC": "LV",
+        "TFC": 31,
+        "NAMN1": "Torņakalns",
+        "NAMN2": "N_A",
+        "NAMA1": "Tornakalns",
+        "NAMA2": "N_A",
+        "NLN1": "LAV",
+        "NLN2": "N_A",
+        "TUC": 45,
+        "RStationID": "N.LV.RAILRDC.000054"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.088603,
+          56.9323929990001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "description": null,
+        "timestamp": null,
+        "begin": null,
+        "end": null,
+        "altitudeMode": null,
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1,
+        "drawOrder": null,
+        "icon": null,
+        "FID": 8104,
+        "FCsubtype": 1,
+        "inspireId": "_EG.EGM.RailrdC:3a4c0ceb-b3e8-4035-bc67-6b60caf7da",
+        "beginLifespanVersion": "2015/10/26 00:00:00",
+        "F_CODE": "AQ125",
+        "ICC": "LV",
+        "TFC": 15,
+        "NAMN1": "Rīga pasažieru",
+        "NAMN2": "N_A",
+        "NAMA1": "Riga pasazieru",
+        "NAMA2": "N_A",
+        "NLN1": "LAV",
+        "NLN2": "N_A",
+        "TUC": 26,
+        "RStationID": "N.LV.RAILRDC.000050"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.1196685,
+          56.946498999
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "description": null,
+        "timestamp": null,
+        "begin": null,
+        "end": null,
+        "altitudeMode": null,
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1,
+        "drawOrder": null,
+        "icon": null,
+        "FID": 8105,
+        "FCsubtype": 1,
+        "inspireId": "_EG.EGM.RailrdC:412b3a23-c496-4376-8f42-bdff8a9747",
+        "beginLifespanVersion": "2015/10/26 00:00:00",
+        "F_CODE": "AQ125",
+        "ICC": "LV",
+        "TFC": 15,
+        "NAMN1": "Vagonu parks",
+        "NAMN2": "N_A",
+        "NAMA1": "Vagonu parks",
+        "NAMA2": "N_A",
+        "NLN1": "LAV",
+        "NLN2": "N_A",
+        "TUC": 26,
+        "RStationID": "N.LV.RAILRDC.000132"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.1549665,
+          56.9436949990001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "description": null,
+        "timestamp": null,
+        "begin": null,
+        "end": null,
+        "altitudeMode": null,
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1,
+        "drawOrder": null,
+        "icon": null,
+        "FID": 8106,
+        "FCsubtype": 1,
+        "inspireId": "_EG.EGM.RailrdC:1983edbe-1ed7-4c5b-9a4f-53552f992f",
+        "beginLifespanVersion": "2015/10/26 00:00:00",
+        "F_CODE": "AQ125",
+        "ICC": "LV",
+        "TFC": 32,
+        "NAMN1": "Daugmale",
+        "NAMN2": "N_A",
+        "NAMA1": "Daugmale",
+        "NAMA2": "N_A",
+        "NLN1": "LAV",
+        "NLN2": "N_A",
+        "TUC": 26,
+        "RStationID": "N.LV.RAILRDC.000147"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.198225,
+          56.9108184990001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "description": null,
+        "timestamp": null,
+        "begin": null,
+        "end": null,
+        "altitudeMode": null,
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1,
+        "drawOrder": null,
+        "icon": null,
+        "FID": 8107,
+        "FCsubtype": 1,
+        "inspireId": "_EG.EGM.RailrdC:0ea206cc-674f-4bf3-b4b1-44be13dbbf",
+        "beginLifespanVersion": "2015/10/26 00:00:00",
+        "F_CODE": "AQ125",
+        "ICC": "LV",
+        "TFC": 32,
+        "NAMN1": "Atgāzene",
+        "NAMN2": "N_A",
+        "NAMA1": "Atgazene",
+        "NAMA2": "N_A",
+        "NLN1": "LAV",
+        "NLN2": "N_A",
+        "TUC": 26,
+        "RStationID": "N.LV.RAILRDC.000128"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.07943,
+          56.9168569990001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "description": null,
+        "timestamp": null,
+        "begin": null,
+        "end": null,
+        "altitudeMode": null,
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1,
+        "drawOrder": null,
+        "icon": null,
+        "FID": 8108,
+        "FCsubtype": 1,
+        "inspireId": "_EG.EGM.RailrdC:d295b8b8-4fe0-4fd4-8f12-18cceb8abe",
+        "beginLifespanVersion": "2015/10/26 00:00:00",
+        "F_CODE": "AQ125",
+        "ICC": "LV",
+        "TFC": 32,
+        "NAMN1": "Gaisma",
+        "NAMN2": "N_A",
+        "NAMA1": "Gaisma",
+        "NAMA2": "N_A",
+        "NLN1": "LAV",
+        "NLN2": "N_A",
+        "TUC": 26,
+        "RStationID": "N.LV.RAILRDC.000149"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.231237,
+          56.8942529990001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "description": null,
+        "timestamp": null,
+        "begin": null,
+        "end": null,
+        "altitudeMode": null,
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1,
+        "drawOrder": null,
+        "icon": null,
+        "FID": 8109,
+        "FCsubtype": 1,
+        "inspireId": "_EG.EGM.RailrdC:9f676b64-5193-4e78-8d54-877f698599",
+        "beginLifespanVersion": "2015/10/26 00:00:00",
+        "F_CODE": "AQ125",
+        "ICC": "LV",
+        "TFC": 32,
+        "NAMN1": "Baloži",
+        "NAMN2": "N_A",
+        "NAMA1": "Balozi",
+        "NAMA2": "N_A",
+        "NLN1": "LAV",
+        "NLN2": "N_A",
+        "TUC": 26,
+        "RStationID": "N.LV.RAILRDC.000065"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.0478225,
+          56.8448539990001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "description": null,
+        "timestamp": null,
+        "begin": null,
+        "end": null,
+        "altitudeMode": null,
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1,
+        "drawOrder": null,
+        "icon": null,
+        "FID": 8110,
+        "FCsubtype": 1,
+        "inspireId": "_EG.EGM.RailrdC:33bba569-7820-484f-abbe-db10c142cc",
+        "beginLifespanVersion": "2015/10/26 00:00:00",
+        "F_CODE": "AQ125",
+        "ICC": "GB",
+        "TFC": 31,
+        "NAMN1": "Salisbury Station",
+        "NAMN2": "N_A",
+        "NAMA1": "Salisbury Station",
+        "NAMA2": "N_A",
+        "NLN1": "ENG",
+        "NLN2": "N_A",
+        "TUC": 45,
+        "RStationID": "N.GB.RAILRDC.000193"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.807285,
+          51.071002999
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "description": null,
+        "timestamp": null,
+        "begin": null,
+        "end": null,
+        "altitudeMode": null,
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1,
+        "drawOrder": null,
+        "icon": null,
+        "FID": 8111,
+        "FCsubtype": 1,
+        "inspireId": "_EG.EGM.RailrdC:dd8bd1c8-f820-45f9-a67d-205e41add8",
+        "beginLifespanVersion": "2015/10/26 00:00:00",
+        "F_CODE": "AQ125",
+        "ICC": "LV",
+        "TFC": 32,
+        "NAMN1": "Dole",
+        "NAMN2": "N_A",
+        "NAMA1": "Dole",
+        "NAMA2": "N_A",
+        "NLN1": "LAV",
+        "NLN2": "N_A",
+        "TUC": 26,
+        "RStationID": "N.LV.RAILRDC.000150"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.324298,
+          56.8642384990001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "description": null,
+        "timestamp": null,
+        "begin": null,
+        "end": null,
+        "altitudeMode": null,
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1,
+        "drawOrder": null,
+        "icon": null,
+        "FID": 8112,
+        "FCsubtype": 1,
+        "inspireId": "_EG.EGM.RailrdC:7d467bc4-af60-48c7-9060-febdcecb3a",
+        "beginLifespanVersion": "2015/10/26 00:00:00",
+        "F_CODE": "AQ125",
+        "ICC": "LV",
+        "TFC": 31,
+        "NAMN1": "Sloka",
+        "NAMN2": "N_A",
+        "NAMA1": "Sloka",
+        "NAMA2": "N_A",
+        "NLN1": "LAV",
+        "NLN2": "N_A",
+        "TUC": 45,
+        "RStationID": "N.LV.RAILRDC.000049"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.6186645,
+          56.9473214990001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "description": null,
+        "timestamp": null,
+        "begin": null,
+        "end": null,
+        "altitudeMode": null,
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1,
+        "drawOrder": null,
+        "icon": null,
+        "FID": 8113,
+        "FCsubtype": 1,
+        "inspireId": "_EG.EGM.RailrdC:fd115b66-5126-4c16-8b4b-2e0d8a39ca",
+        "beginLifespanVersion": "2015/10/26 00:00:00",
+        "F_CODE": "AQ125",
+        "ICC": "NO",
+        "TFC": 0,
+        "NAMN1": "Narvik",
+        "NAMN2": "N_A",
+        "NAMA1": "Narvik",
+        "NAMA2": "N_A",
+        "NLN1": "NOR",
+        "NLN2": "N_A",
+        "TUC": 0,
+        "RStationID": "N.NO.RAILRDC.00031"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.4409565,
+          68.441921999
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "description": null,
+        "timestamp": null,
+        "begin": null,
+        "end": null,
+        "altitudeMode": null,
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1,
+        "drawOrder": null,
+        "icon": null,
+        "FID": 8114,
+        "FCsubtype": 1,
+        "inspireId": "_EG.EGM.RailrdC:59aaeac9-3488-40ed-81b0-96eef166cc",
+        "beginLifespanVersion": "2015/10/26 00:00:00",
+        "F_CODE": "AQ125",
+        "ICC": "GB",
+        "TFC": 31,
+        "NAMN1": "Newbury Station",
+        "NAMN2": "N_A",
+        "NAMA1": "Newbury Station",
+        "NAMA2": "N_A",
+        "NLN1": "ENG",
+        "NLN2": "N_A",
+        "TUC": 45,
+        "RStationID": "N.GB.RAILRDC.000537"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.323081,
+          51.397595999
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "description": null,
+        "timestamp": null,
+        "begin": null,
+        "end": null,
+        "altitudeMode": null,
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1,
+        "drawOrder": null,
+        "icon": null,
+        "FID": 8115,
+        "FCsubtype": 1,
+        "inspireId": "_EG.EGM.RailrdC:06610e41-2302-4761-aa69-16bc19d7b4",
+        "beginLifespanVersion": "2015/10/26 00:00:00",
+        "F_CODE": "AQ125",
+        "ICC": "GB",
+        "TFC": 31,
+        "NAMN1": "Didcot Parkway Station",
+        "NAMN2": "N_A",
+        "NAMA1": "Didcot Parkway Station",
+        "NAMA2": "N_A",
+        "NLN1": "ENG",
+        "NLN2": "N_A",
+        "TUC": 45,
+        "RStationID": "N.GB.RAILRDC.000539"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.2453565,
+          51.6113784990001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "description": null,
+        "timestamp": null,
+        "begin": null,
+        "end": null,
+        "altitudeMode": null,
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1,
+        "drawOrder": null,
+        "icon": null,
+        "FID": 8116,
+        "FCsubtype": 1,
+        "inspireId": "_EG.EGM.RailrdC:1551837a-426f-4938-ba62-c373c22f5c",
+        "beginLifespanVersion": "2015/10/26 00:00:00",
+        "F_CODE": "AQ125",
+        "ICC": "NO",
+        "TFC": 0,
+        "NAMN1": "Steinkjer",
+        "NAMN2": "N_A",
+        "NAMA1": "Steinkjer",
+        "NAMA2": "N_A",
+        "NLN1": "NOR",
+        "NLN2": "N_A",
+        "TUC": 0,
+        "RStationID": "N.NO.RAILRDC.00005"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.491555,
+          64.0123369990001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "description": null,
+        "timestamp": null,
+        "begin": null,
+        "end": null,
+        "altitudeMode": null,
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1,
+        "drawOrder": null,
+        "icon": null,
+        "FID": 8117,
+        "FCsubtype": 1,
+        "inspireId": "_EG.EGM.RailrdC:270e75c6-a748-467d-a6e0-349270a8fa",
+        "beginLifespanVersion": "2015/10/26 00:00:00",
+        "F_CODE": "AQ125",
+        "ICC": "SE",
+        "TFC": 15,
+        "NAMN1": "Västerhaninge",
+        "NAMN2": "N_A",
+        "NAMA1": "Vaesterhaninge",
+        "NAMA2": "N_A",
+        "NLN1": "SWE",
+        "NLN2": "N_A",
+        "TUC": 45,
+        "RStationID": "N.SE.RAILRDC.00287"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.102994,
+          59.122894999
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "description": null,
+        "timestamp": null,
+        "begin": null,
+        "end": null,
+        "altitudeMode": null,
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1,
+        "drawOrder": null,
+        "icon": null,
+        "FID": 8118,
+        "FCsubtype": 1,
+        "inspireId": "_EG.EGM.RailrdC:cc6bc6c5-0231-4dff-b238-f53f68fbbe",
+        "beginLifespanVersion": "2015/10/26 00:00:00",
+        "F_CODE": "AQ125",
+        "ICC": "SE",
+        "TFC": 15,
+        "NAMN1": "Falköpings Central",
+        "NAMN2": "N_A",
+        "NAMA1": "Falkoepings Central",
+        "NAMA2": "N_A",
+        "NLN1": "SWE",
+        "NLN2": "N_A",
+        "TUC": 45,
+        "RStationID": "N.SE.RAILRDC.00105"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.5517745,
+          58.1762404990001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "description": null,
+        "timestamp": null,
+        "begin": null,
+        "end": null,
+        "altitudeMode": null,
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1,
+        "drawOrder": null,
+        "icon": null,
+        "FID": 8119,
+        "FCsubtype": 1,
+        "inspireId": "_EG.EGM.RailrdC:800ea9e7-fe7a-4648-8004-c873bc4d41",
+        "beginLifespanVersion": "2015/10/26 00:00:00",
+        "F_CODE": "AQ125",
+        "ICC": "SE",
+        "TFC": 15,
+        "NAMN1": "Enköping",
+        "NAMN2": "N_A",
+        "NAMA1": "Enkoeping",
+        "NAMA2": "N_A",
+        "NLN1": "SWE",
+        "NLN2": "N_A",
+        "TUC": 45,
+        "RStationID": "N.SE.RAILRDC.00065"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.088756,
+          59.6452849990001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "description": null,
+        "timestamp": null,
+        "begin": null,
+        "end": null,
+        "altitudeMode": null,
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1,
+        "drawOrder": null,
+        "icon": null,
+        "FID": 8120,
+        "FCsubtype": 1,
+        "inspireId": "_EG.EGM.RailrdC:f3c828a0-3846-45aa-9520-a6f88651d4",
+        "beginLifespanVersion": "2015/10/26 00:00:00",
+        "F_CODE": "AQ125",
+        "ICC": "SE",
+        "TFC": 15,
+        "NAMN1": "Rydebäck",
+        "NAMN2": "N_A",
+        "NAMA1": "Rydebaeck",
+        "NAMA2": "N_A",
+        "NLN1": "SWE",
+        "NLN2": "N_A",
+        "TUC": 45,
+        "RStationID": "N.SE.RAILRDC.00336"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.782214,
+          55.9636669990001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "description": null,
+        "timestamp": null,
+        "begin": null,
+        "end": null,
+        "altitudeMode": null,
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1,
+        "drawOrder": null,
+        "icon": null,
+        "FID": 8121,
+        "FCsubtype": 1,
+        "inspireId": "_EG.EGM.RailrdC:63ebf74a-1096-4603-9c19-db7cf1bbee",
+        "beginLifespanVersion": "2015/10/26 00:00:00",
+        "F_CODE": "AQ125",
+        "ICC": "SE",
+        "TFC": 15,
+        "NAMN1": "Surahammar",
+        "NAMN2": "N_A",
+        "NAMA1": "Surahammar",
+        "NAMA2": "N_A",
+        "NLN1": "SWE",
+        "NLN2": "N_A",
+        "TUC": 45,
+        "RStationID": "N.SE.RAILRDC.00400"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          16.2197745,
+          59.7065494990001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "description": null,
+        "timestamp": null,
+        "begin": null,
+        "end": null,
+        "altitudeMode": null,
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1,
+        "drawOrder": null,
+        "icon": null,
+        "FID": 8122,
+        "FCsubtype": 1,
+        "inspireId": "_EG.EGM.RailrdC:44558ee7-65df-44c1-ba32-22c2340eb2",
+        "beginLifespanVersion": "2015/10/26 00:00:00",
+        "F_CODE": "AQ125",
+        "ICC": "SE",
+        "TFC": 15,
+        "NAMN1": "Avesta centrum",
+        "NAMN2": "N_A",
+        "NAMA1": "Avesta centrum",
+        "NAMA2": "N_A",
+        "NLN1": "SWE",
+        "NLN2": "N_A",
+        "TUC": 45,
+        "RStationID": "N.SE.RAILRDC.00661"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          16.17379,
+          60.147845499
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "description": null,
+        "timestamp": null,
+        "begin": null,
+        "end": null,
+        "altitudeMode": null,
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1,
+        "drawOrder": null,
+        "icon": null,
+        "FID": 8123,
+        "FCsubtype": 1,
+        "inspireId": "_EG.EGM.RailrdC:7ab78fc4-64e4-4b19-b2d0-b4787d782a",
+        "beginLifespanVersion": "2015/10/26 00:00:00",
+        "F_CODE": "AQ125",
+        "ICC": "GB",
+        "TFC": 31,
+        "NAMN1": "Wilmslow Station",
+        "NAMN2": "N_A",
+        "NAMA1": "Wilmslow Station",
+        "NAMA2": "N_A",
+        "NLN1": "ENG",
+        "NLN2": "N_A",
+        "TUC": 45,
+        "RStationID": "N.GB.RAILRDC.000498"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.223826,
+          53.327391499
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "description": null,
+        "timestamp": null,
+        "begin": null,
+        "end": null,
+        "altitudeMode": null,
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1,
+        "drawOrder": null,
+        "icon": null,
+        "FID": 8124,
+        "FCsubtype": 1,
+        "inspireId": "_EG.EGM.RailrdC:aea98cfa-738c-4160-a81a-4f40962555",
+        "beginLifespanVersion": "2015/10/26 00:00:00",
+        "F_CODE": "AQ125",
+        "ICC": "CH",
+        "TFC": 15,
+        "NAMN1": "Vevey",
+        "NAMN2": "N_A",
+        "NAMA1": "Vevey",
+        "NAMA2": "N_A",
+        "NLN1": "FRE",
+        "NLN2": "N_A",
+        "TUC": 0,
+        "RStationID": "N.CH.RAILRDC.002612"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.842533,
+          46.463469999
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "description": null,
+        "timestamp": null,
+        "begin": null,
+        "end": null,
+        "altitudeMode": null,
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1,
+        "drawOrder": null,
+        "icon": null,
+        "FID": 8125,
+        "FCsubtype": 1,
+        "inspireId": "_EG.EGM.RailrdC:6bb93d5b-534a-4400-87d4-c8635d757e",
+        "beginLifespanVersion": "2015/10/26 00:00:00",
+        "F_CODE": "AQ125",
+        "ICC": "GB",
+        "TFC": 15,
+        "NAMN1": "Crowborough Station",
+        "NAMN2": "N_A",
+        "NAMA1": "Crowborough Station",
+        "NAMA2": "N_A",
+        "NLN1": "ENG",
+        "NLN2": "N_A",
+        "TUC": 45,
+        "RStationID": "N.GB.RAILRDC.000098"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.184816500000068,
+          51.0448989990001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "description": null,
+        "timestamp": null,
+        "begin": null,
+        "end": null,
+        "altitudeMode": null,
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1,
+        "drawOrder": null,
+        "icon": null,
+        "FID": 8126,
+        "FCsubtype": 1,
+        "inspireId": "_EG.EGM.RailrdC:fc88d1d0-01be-48ec-873d-ff921930d6",
+        "beginLifespanVersion": "2015/10/26 00:00:00",
+        "F_CODE": "AQ125",
+        "ICC": "CH",
+        "TFC": 15,
+        "NAMN1": "Villars-sur-Glâne",
+        "NAMN2": "N_A",
+        "NAMA1": "Villars-sur-Glane",
+        "NAMA2": "N_A",
+        "NLN1": "FRE",
+        "NLN2": "N_A",
+        "TUC": 0,
+        "RStationID": "N.CH.RAILRDC.002992"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.1171065,
+          46.790106499
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "description": null,
+        "timestamp": null,
+        "begin": null,
+        "end": null,
+        "altitudeMode": null,
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1,
+        "drawOrder": null,
+        "icon": null,
+        "FID": 8127,
+        "FCsubtype": 1,
+        "inspireId": "_EG.EGM.RailrdC:fc3a2fb9-6db9-4c3b-a358-4a46d6aa90",
+        "beginLifespanVersion": "2015/10/26 00:00:00",
+        "F_CODE": "AQ125",
+        "ICC": "CH",
+        "TFC": 15,
+        "NAMN1": "Tann-Dürnten",
+        "NAMN2": "N_A",
+        "NAMA1": "Tann-Duernten",
+        "NAMA2": "N_A",
+        "NLN1": "GER",
+        "NLN2": "N_A",
+        "TUC": 0,
+        "RStationID": "N.CH.RAILRDC.003623"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.8519845,
+          47.2686674990001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": null,
+        "description": null,
+        "timestamp": null,
+        "begin": null,
+        "end": null,
+        "altitudeMode": null,
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1,
+        "drawOrder": null,
+        "icon": null,
+        "FID": 8128,
+        "FCsubtype": 1,
+        "inspireId": "_EG.EGM.RailrdC:fe1befea-32e0-4e47-a38b-dc17504dcc",
+        "beginLifespanVersion": "2015/10/26 00:00:00",
+        "F_CODE": "AQ125",
+        "ICC": "CH",
+        "TFC": 15,
+        "NAMN1": "Horgen Oberdorf",
+        "NAMN2": "N_A",
+        "NAMA1": "Horgen Oberdorf",
+        "NAMA2": "N_A",
+        "NLN1": "GER",
+        "NLN2": "N_A",
+        "TUC": 0,
+        "RStationID": "N.CH.RAILRDC.003609"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5890685,
+          47.2590334990001
+        ]
+      }
+    }
+  ]
+}
