@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8' />
+    <title>Nordic Countries Rail</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        #info {
+            display: block;
+            position: absolute;
+            margin-left: 5px;
+            margin-top: 1px;
+            width: 50%;
+            padding: 1px;
+            border: none;
+            border-radius: 1px;
+            font-weight: bold;
+            font: 25px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+            text-align: left;
+            color: #41464bcb;
+            background: none;
+        }
+
+        #button-info {
+            display: block;
+            position: absolute;
+            bottom: 60px;
+            margin-left: 5px;
+            width: 50%;
+            padding: 1px;
+            border: none;
+            border-radius: 1px;
+            font-weight: bold;
+            font: 25px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+            text-align: left;
+            color: #41464bcb;
+            background: none;
+        }
+
+        #stockholm {
+            display: block;
+            position: relative;
+        }
+
+        #copenhagen {
+            display: block;
+            position: relative;
+        }
+
+        #helsinki {
+            display: block;
+            position: relative;
+        }
+
+        #oslo {
+            display: block;
+            position: relative;
+        }
+
+        #return {
+            display: block;
+            position: relative;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .filter-ctrl {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 1;
+        }
+
+        .filter-ctrl input[type='text'] {
+            font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+            width: 100%;
+            border: 0;
+            background-color: #fff;
+            margin: 0;
+            color: #6c757dc2;
+            padding: 10px;
+            box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);
+            border-radius: 3px;
+            width: 180px;
+        }
+
+        .bottom_button {
+            position: absolute;
+            bottom: 30px;
+        }
+
+        .legend {
+            background-color: #6c757d80;
+            border-radius: 3px;
+
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+            padding: 10px;
+            position: absolute;
+            right: 10px;
+            top: 75px;
+            z-index: 1;
+        }
+
+        .legend h4 {
+            margin: 0 0 10px;
+        }
+
+        .legend div span {
+            border-radius: 50%;
+            display: inline-block;
+            height: 10px;
+            margin-right: 5px;
+            width: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Create a legend for the web map -->
+    <div id="legend" class="legend">
+        <h4>Legend</h4>
+        <div><span style="background-color: #C05039"></span>Train Stations</div>
+        <div><span style="background-color: #3578BE"></span>Train Lines</div>
+    </div>
+
+    <!-- Set up divs for map, title, and zoom to capital instructions -->
+    <div id='map'></div>
+    <br>
+    <pre id="info"></pre>
+    <br>
+
+    <!-- Create Buttons for Zooming to Capitals -->
+    <pre id="button-info"></pre>
+    <div class="btn-group bottom_button">
+        <button type="button" role="group" class="btn-lg btn-secondary" id="stockholm">Stockholm</button>
+        <button type="button" class="btn-lg btn-secondary" id="copenhagen">Copenhagen</button>
+        <button type="button" class="btn-lg btn-secondary" id="helsinki">Helsinki</button>
+        <button type="button" class="btn-lg btn-secondary" id="oslo">Oslo</button>
+        <button type="button" class="btn-lg btn-secondary" id="return">Return to Full Map</button>
+    </div>
+
+    <!-- Create filter for searching for station names -->
+    <div class="filter-ctrl">
+        <input id="filter-input" type="text" name="filter" placeholder="Filter by Station Name">
+    </div>
+    <script>
+        // Get Mapbox Access Token 
+        mapboxgl.accessToken = 'pk.eyJ1IjoiYWxpc29uZGVlcmUiLCJhIjoiY2s1ZzRiZ3JsMDQycDNrcW1nMHcxODhkayJ9.HO_b7LH4WrchBsGVMuroIg';
+
+        // Set bounds for nordic countries
+        var bounds = [
+            [-15, 30],
+            [80, 90],
+        ];
+
+        var layerIDs = []; // Will contain a list used to filter against.
+        var filterInput = document.getElementById('filter-input');
+        // Initialize Map 
+        // Use mapbox light style
+        var map = new mapboxgl.Map({
+            container: 'map', // container id
+            style: 'mapbox://styles/mapbox/light-v10', //stylesheet location
+            center: [8.469, 61.47], // starting position
+            zoom: 3,
+            maxBounds: bounds,
+        });
+
+        // Set title of map
+        document.getElementById('info').innerHTML = "<h2>Rail Stations and Lines in Nordic Countries</h2>"
+
+        // Set writing just above zoom buttons 
+        document.getElementById('button-info').innerHTML = "<h4>Click to Zoom to a Capital</h4>"
+
+        // Add rail line data (geojson) from github
+        var editorData = $.ajax({
+            url: "https://adeere.github.io/adeere-web/data/nordic_countries_rail_lines.geojson"
+        }).done(function (linedata) {
+            map.on('load', function () {
+                // Add a new source from our GeoJSON data 
+                map.addSource("trainlines", {
+                    type: "geojson",
+                    data: linedata
+                });
+
+                // Create layer from source
+                map.addLayer({
+                    "id": "trainlines",
+                    "type": "line",
+                    "source": "trainlines",
+                    'layout': {
+                        'line-join': 'round',
+                        'line-cap': 'round'
+                    },
+                    'paint': {
+                        'line-color': '#3578BE',
+                        'line-width': 1.4,
+                        'line-opacity': 0.6
+                    }
+                });
+            })
+        })
+
+        // Add rail station data (geojson) from github
+        var editorData = $.ajax({
+            url: "https://adeere.github.io/adeere-web/data/nordic_countries_stations.geojson"
+        }).done(function (stations) {
+            map.on('load', function () {
+                // Add a new source from our GeoJSON data 
+                map.addSource("rail_stations", {
+                    type: "geojson",
+                    data: stations
+                });
+                // Add source for popups
+                map.addLayer({ // Fully zoomed in layers of pubs
+                    id: 'Station_Popups',
+                    type: 'circle',
+                    source: 'rail_stations',
+
+                    paint: {
+                        'circle-color': '#39A9C0',
+                        'circle-radius': 6,
+                        'circle-opacity': 0,
+                    }
+                });
+
+                // Add layer for filter
+                stations.features.forEach(function (feature) {
+                    var name = feature.properties['NAMA1'];
+                    var layerID = name;
+
+                    // Add a layer for this symbol type if it hasn't been added already.
+                    if (!map.getLayer(layerID)) {
+                        map.addLayer({
+                            'id': layerID,
+                            'type': 'circle',
+                            'source': 'rail_stations',
+                            paint: {
+                                'circle-color': '#C05039',
+                                "circle-radius": 6,
+                                'circle-opacity': 0.6
+                            },
+                            'filter': ['==', 'NAMA1', name]
+                        });
+
+                        layerIDs.push(layerID);
+                    }
+                });
+                // ADD SEARCH BAR INTERACTIVITY 
+                // Filter for input to search bar
+                filterInput.addEventListener('keyup', function (e) {
+                    // If the input value matches a layerID set
+                    // it's visibility to 'visible' or else hide it.
+
+                    // uppercase the first letter, lowercase the rest of the search 
+                    var value = e.target.value.trim().replace(/\w\S*/g, function (txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
+                    layerIDs.forEach(function (layerID) {
+                        map.setLayoutProperty(
+                            layerID,
+                            'visibility',
+                            layerID.indexOf(value) > -1 ? 'visible' : 'none'
+                        );
+                    });
+                });
+
+                // set popups on click
+                map.on('click', function (e) {
+                    var features = map.queryRenderedFeatures(e.point, {
+                        layers: ['Station_Popups'] // replace this with the name of the layer
+                    });
+                    if (!features.length) {
+                        return;
+                    }
+                    var feature = features[0];
+                    var popup = new mapboxgl.Popup({ offset: [0, -15] })
+                        .setLngLat(feature.geometry.coordinates)
+                        .setHTML('<p><strong> Station Name: </strong>' + feature.properties.NAMA1 + '</p><hr>' + '<p> <strong>Country Code: </strong>' + feature.properties.ICC)
+                        .addTo(map);
+                });
+
+            });
+        });
+
+
+        // ADDING FLY TO CAPITAL CITY INTERACTIVITY
+
+        // Stockholm
+        document.getElementById('stockholm').addEventListener('click', function () {
+            // Fly to a random location by offsetting the point -74.50, 40
+            // by up to 5 degrees.
+            map.flyTo({
+                center: [
+                    18.06, 59.32
+                ],
+                zoom: 10,
+                essential: true // this animation is considered essential with respect to prefers-reduced-motion
+            });
+        });
+
+        // Copenhagen
+        document.getElementById('copenhagen').addEventListener('click', function () {
+            // Fly to a random location by offsetting the point -74.50, 40
+            // by up to 5 degrees.
+            map.flyTo({
+                center: [
+                    12.56, 55.67
+                ],
+                zoom: 10,
+                essential: true // this animation is considered essential with respect to prefers-reduced-motion
+            });
+        });
+
+        // Oslo
+        document.getElementById('oslo').addEventListener('click', function () {
+            // Fly to a random location by offsetting the point -74.50, 40
+            // by up to 5 degrees.
+            map.flyTo({
+                center: [
+                    10.75, 59.91
+                ],
+                zoom: 10,
+                essential: true // this animation is considered essential with respect to prefers-reduced-motion
+            });
+        });
+
+        // Helsinki
+        document.getElementById('helsinki').addEventListener('click', function () {
+            // Fly to a random location by offsetting the point -74.50, 40
+            // by up to 5 degrees.
+            map.flyTo({
+                center: [
+                    24.9, 60.17
+                ],
+                zoom: 10,
+                essential: true // this animation is considered essential with respect to prefers-reduced-motion
+            });
+        });
+
+        // Return to full map view
+        document.getElementById('return').addEventListener('click', function () {
+            // Fly to a random location by offsetting the point -74.50, 40
+            // by up to 5 degrees.
+            map.flyTo({
+                center: [
+                    8.469, 62.47
+                ],
+                zoom: 4,
+                essential: true // this animation is considered essential with respect to prefers-reduced-motion
+            });
+        });
+
+    </script>
+</body>
+
+</html>
