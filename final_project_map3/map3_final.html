@@ -45,22 +45,22 @@
             background: rgba(255, 255, 255, 0.9);
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
             border-radius: 5px;
-            width: 200px;
+            width: 190px;
             float: left;
-            margin-left: 70px;
-            margin-top: 540px;
+            margin-left: 5%;
+            margin-top: 30%;
             opacity: 1.0;
             font-family: Arial, Helvetica, sans-serif;
             z-index:5;
-            position: fixed;
-            height: 250px;
+            position: relative;
+            height: 225px;
         }
 
         body {
             padding: 0;
             margin: 0;
         }
-        html, body, #map {
+         #map {
             height: 100%;
             width: 100%;
             z-index: -5;
@@ -74,17 +74,17 @@
 
 .title {
           padding: 1px 2px;
-          height: 8x;
+          height: 6x;
           background: rgba(255, 255, 255, 0.9);
           box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
           border-radius: 5px;
-          top: 51%;
-          position: fixed;
+          
+          
           text-align: center;
         }
     
         .title i {
-          width: 15px;
+          width: 6px;
           height: 10px;
           float: left;
           margin-right: 8px;
@@ -93,29 +93,34 @@
 
         .title2 {
           padding: 1px 2px;
-          height: 8x;
+          height: 6x;
           background: rgba(255, 255, 255, 0.9);
           box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
           border-radius: 5px;
+          text-align: center;
         
         }
     
         .title2 i {
           width: 15px;
-          height: 10px;
+          height: 6px;
           float: left;
           margin-left: 8px;
           opacity: 0.7;
           text-align: center;
         }
 
+
     </style>
 
 </head>
 
 <body>
+ 
     <div id="chart">
     </div>
+
+
     <div id="map"></div>
 
     <script type="text/javascript">
@@ -169,7 +174,7 @@
             c3.generate({
                 bindto: '#chart',  // id of the chart div, as defined earlier
                 size: {  // size (height and width) of the chart, by pixels
-                    height: 250,
+                    height: 225,
                     width: 175
                 },
 
@@ -294,7 +299,7 @@
 
         legend.addTo(map);
 
-        var title = L.control({ position: 'topleft' }); // position of the title
+        var title = L.control({ position: 'topright' }); // position of the title
     
     title.onAdd = function (map) {
       this._div = L.DomUtil.create('div', 'title'); // create a div with a class "title"
@@ -307,7 +312,7 @@
     
     title2.onAdd = function (map) {
       this._div = L.DomUtil.create('div', 'title2'); // create a div with a class "title"
-      this._div.innerHTML = "<h5>Hover over the pie chart to see the percentage of migrants from each region</h5>";  // Title text, may use html to customize
+      this._div.innerHTML = "<h4>Hover over the pie chart to see the percentage of migrants from <br> each region</h4>";  // Title text, may use html to customize
       return this._div;
     };
     title2.addTo(map);
