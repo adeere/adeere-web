@@ -1,3 +1,1 @@
-# Lab 1 - from GEOB 370 at UBC
-
-A interactive map of nightclub spaces in London
+# Lab 1 - from GEOB 472 at UBC
